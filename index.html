@@ -1,0 +1,68 @@
+<html>
+    <head>
+        <title>Auca Admission Form</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="background-image">
+            <div class="form-box">
+                <div class="botton-box">
+                    <div id="btn"></div>
+                    <button type="button" class="toggle-btn" onclick="login()">Log In</button>
+                    <button type="button" class="toggle-btn" onclick="register()">Register</button>
+                </div>
+                <div class="Social-Media">
+                    <img src="c:\Users\Admin\Downloads\facebook.png" alt="facebook">
+                    <img src="c:\Users\Admin\Downloads\ig-removebg-preview.png" alt="ig">
+                    <img src="c:\Users\Admin\Downloads\twitter-removebg-preview.png" alt="twitter">
+                </div>
+                <form id="login" class="input-group">
+                    <input type="text" class="input-field" placeholder="User Id" required>
+                    <input type="password" class="input-field" id="loginPassword" placeholder="Enter Password" required>
+                    <input type="checkbox" class="checkbox"><span>Remember Password</span>
+                    <button type="submit" class="submit-btn">Login</button>
+                </form>
+                <form id="register" class="input-group" onsubmit="return validateLogin()">
+                    <input type="text" class="input-field" placeholder="User Id" required>
+                    <input type="email" class="input-field" placeholder="Email Id" required>
+                    <input type="text" class="input-field" placeholder="First Name" required>
+                    <input type="text" class="input-field" placeholder="Last Name" required>
+                    <input type="text" class="input-field" placeholder="Mobile Number" required>
+                    <input type="calender" class="input-field" placeholder="Date of Birth" required>
+                    <input type="text" class="input-field" placeholder="Place of Birth" required>
+                    <input type="text" class="input-field" placeholder="Address" required>
+                    <input type="text" class="input-field" placeholder="PO.Box" required>
+                    <input type="password" class="input-field" placeholder="Enter Password" required>
+                    <input type="checkbox" class="checkbox"><span>I agree to the terms & conditions</span>
+                    <button type="Submit" class="submit-btn">Register</button>
+                </form>
+            </div>
+        </div>
+        <script>
+            var x = document.getElementById("login");
+            var y = document.getElementById("register");
+            var z = document.getElementById("btn");
+        
+            function register() {
+                x.style.left = "-400px";
+                y.style.left = "50px";
+                z.style.left = "110px";
+            }
+        
+            function login() {
+                x.style.left = "50px";
+                y.style.left = "450px";
+                z.style.left = "0px";
+            }
+        
+            function validateLogin() {
+                var password = document.getElementById("loginPassword").value;
+                if (password.length < 6) {
+                    alert("Password must be at least 6 characters long.");
+                    return false; // Prevent form submission
+                }
+                return true; // Allow form submission
+            }
+        </script>
+    </body>
+</html>
